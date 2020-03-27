@@ -1,0 +1,293 @@
+<div id="dashboard-project" class="page-layout simple right-sidebar" fxLayout="row">
+
+    <!-- CENTER -->
+    <div class="center" fusePerfectScrollbar>
+
+        <!-- HEADER -->
+        <div class="header accent p-24 pb-0" fxLayout="column" fxLayoutAlign="space-between">
+
+            <div fxLayout="row" fxLayoutAlign="space-between start">
+
+                <span class="mat-display-1 my-0 my-sm-24 welcome-message"
+                    [@animate]="{value:'*',params:{x:'50px'}}">Coronavirus en Honduras
+                </span>
+
+                <!-- <button mat-icon-button class="sidebar-toggle mr-8" fxHide.gt-md
+                        (click)="toggleSidebar('project-dashboard-right-sidebar-1')">
+                    <mat-icon>menu</mat-icon>
+                </button> -->
+            </div>
+
+            <!-- <div fxLayout="row">
+
+                <div class="selected-project">{{selectedProject.name}}</div>
+
+                <button mat-icon-button class="project-selector" [matMenuTriggerFor]="projectsMenu"
+                        aria-label="Select project">
+                    <mat-icon>more_horiz</mat-icon>
+                </button>
+
+                <mat-menu #projectsMenu="matMenu">
+                    <button mat-menu-item *ngFor="let project of projects" (click)="selectedProject = project">
+                        <span>{{project.name}}</span>
+                    </button>
+                </mat-menu>
+            </div> -->
+        </div>
+        <!-- / HEADER -->
+
+        <!-- CONTENT -->
+        <div class="content">
+
+            <mat-tab-group dynamicHeight>
+
+                <mat-tab label="Inicio">
+
+                    <div class="widget-group p-12" fxLayout="row wrap" fxFlex="100" *fuseIfOnDom
+                        [@animateStagger]="{value:'50'}">
+
+                        <!-- Confirmed Cases -->
+                        <fuse-widget [@animate]="{value:'*',params:{y:'100%'}}" class="widget" fxLayout="column"
+                            fxFlex="100" fxFlex.gt-xs="50" fxFlex.gt-md="25">
+
+                            <div class="fuse-widget-front">
+                                <div class="pl-16 pr-8 py-16 h-52" fxLayout="row" fxLayoutAlign="space-between center">
+                                    Casos Confirmados
+                                    <button mat-icon-button fuseWidgetToggle aria-label="more">
+                                        <mat-icon>more_vert</mat-icon>
+                                    </button>
+                                </div>
+
+                                <div class="pt-8 pb-32" fxLayout="column" fxLayoutAlign="center center">
+                                    <div class="light-blue-fg font-size-72 line-height-72">
+                                        {{confirmedCases}}
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="fuse-widget-back p-16 pt-32">
+                                <button mat-icon-button fuseWidgetToggle class="fuse-widget-flip-button"
+                                    aria-label="Flip widget">
+                                    <mat-icon class="s-16">close</mat-icon>
+                                </button>
+
+                                <div>
+                                    Fuente : https://corona.lmao.ninja/countries/HONDURAS
+                                </div>
+                            </div>
+
+                        </fuse-widget>
+                        <!-- / Confirmed Cases -->
+
+                        <!-- Muertes Confirmadas -->
+                        <fuse-widget [@animate]="{value:'*',params:{y:'100%'}}" class="widget" fxLayout="column"
+                            fxFlex="100" fxFlex.gt-xs="50" fxFlex.gt-md="25">
+
+                            <div class="fuse-widget-front">
+                                <div class="pl-16 pr-8 py-16 h-52" fxLayout="row" fxLayoutAlign="space-between center">
+                                    Muertes Confirmadas
+                                    <button mat-icon-button fuseWidgetToggle aria-label="more">
+                                        <mat-icon>more_vert</mat-icon>
+                                    </button>
+                                </div>
+
+                                <div class="pt-8 pb-32" fxLayout="column" fxLayoutAlign="center center">
+                                    <div class="red-fg font-size-72 line-height-72">
+                                        {{confirmedDeath}}
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="fuse-widget-back p-16 pt-32">
+                                <button mat-icon-button fuseWidgetToggle class="fuse-widget-flip-button"
+                                    aria-label="Flip widget">
+                                    <mat-icon class="s-16">close</mat-icon>
+                                </button>
+
+                                <div>
+                                    Fuente : https://corona.lmao.ninja/countries/HONDURAS
+                                </div>
+                            </div>
+
+                        </fuse-widget>
+                        <!-- / Muertes Confirmadas -->
+
+                        <!-- Personas Recuperadas -->
+                        <fuse-widget [@animate]="{value:'*',params:{y:'100%'}}" class="widget" fxLayout="column"
+                            fxFlex="100" fxFlex.gt-xs="50" fxFlex.gt-md="25">
+
+                            <div class="fuse-widget-front">
+                                <div class="pl-16 pr-8 py-16 h-52" fxLayout="row" fxLayoutAlign="space-between center">
+                                    Personas Recuperadas
+                                    <button mat-icon-button fuseWidgetToggle aria-label="more">
+                                        <mat-icon>more_vert</mat-icon>
+                                    </button>
+                                </div>
+
+                                <div class="pt-8 pb-32" fxLayout="column" fxLayoutAlign="center center">
+                                    <div class="green-fg font-size-72 line-height-72">
+                                        {{recoveredCases}}
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="fuse-widget-back p-16 pt-32">
+                                <button mat-icon-button fuseWidgetToggle class="fuse-widget-flip-button"
+                                    aria-label="Flip widget">
+                                    <mat-icon class="s-16">close</mat-icon>
+                                </button>
+
+                                <div>
+                                    Fuente : https://corona.lmao.ninja/countries/HONDURAS
+                                </div>
+                            </div>
+
+                        </fuse-widget>
+                        <!-- / Personas Recuperadas -->
+
+                        <!-- Casos Activos -->
+                        <fuse-widget [@animate]="{value:'*',params:{y:'100%'}}" class="widget" fxLayout="column"
+                            fxFlex="100" fxFlex.gt-xs="50" fxFlex.gt-md="25">
+
+                            <div class="fuse-widget-front">
+                                <div class="pl-16 pr-8 py-16 h-52" fxLayout="row" fxLayoutAlign="space-between center">
+                                    Casos Activos
+                                    <button mat-icon-button fuseWidgetToggle aria-label="more">
+                                        <mat-icon>more_vert</mat-icon>
+                                    </button>
+                                </div>
+
+                                <div class="pt-8 pb-32" fxLayout="column" fxLayoutAlign="center center">
+                                    <div class="blue-grey-fg font-size-72 line-height-72">
+                                        {{activeCases}}
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="fuse-widget-back p-16 pt-32">
+                                <button mat-icon-button fuseWidgetToggle class="fuse-widget-flip-button"
+                                    aria-label="Flip widget">
+                                    <mat-icon class="s-16">close</mat-icon>
+                                </button>
+
+                                <div>
+                                    Fuente : https://corona.lmao.ninja/countries/HONDURAS
+                                </div>
+                            </div>
+
+                        </fuse-widget>
+                        <!-- / Casos Activos -->
+
+                        <!-- Casos de Hoy -->
+                        <fuse-widget [@animate]="{value:'*',params:{y:'100%'}}" class="widget" fxLayout="column"
+                            fxFlex="100" fxFlex.gt-xs="50" fxFlex.gt-md="25">
+
+                            <div class="fuse-widget-front">
+                                <div class="pl-16 pr-8 py-16 h-52" fxLayout="row" fxLayoutAlign="space-between center">
+                                    Casos de Hoy {{dateNow | date:'fullDate'}}
+                                    <button mat-icon-button fuseWidgetToggle aria-label="more">
+                                        <mat-icon>more_vert</mat-icon>
+                                    </button>
+                                </div>
+
+                                <div class="pt-8 pb-32" fxLayout="column" fxLayoutAlign="center center">
+                                    <div class="light-blue-fg font-size-72 line-height-72">
+                                        {{todayCases}}
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="fuse-widget-back p-16 pt-32">
+                                <button mat-icon-button fuseWidgetToggle class="fuse-widget-flip-button"
+                                    aria-label="Flip widget">
+                                    <mat-icon class="s-16">close</mat-icon>
+                                </button>
+
+                                <div>
+                                    Fuente : https://corona.lmao.ninja/countries/HONDURAS
+                                </div>
+                            </div>
+
+                        </fuse-widget>
+                        <!-- / Casos de Hoy -->
+
+                        <!-- Muertes de Hoy -->
+                        <fuse-widget [@animate]="{value:'*',params:{y:'100%'}}" class="widget" fxLayout="column"
+                            fxFlex="100" fxFlex.gt-xs="50" fxFlex.gt-md="25">
+
+                            <div class="fuse-widget-front">
+                                <div class="pl-16 pr-8 py-16 h-52" fxLayout="row" fxLayoutAlign="space-between center">
+                                    Muertes de Hoy {{dateNow | date:'fullDate'}}
+                                    <button mat-icon-button fuseWidgetToggle aria-label="more">
+                                        <mat-icon>more_vert</mat-icon>
+                                    </button>
+                                </div>
+
+                                <div class="pt-8 pb-32" fxLayout="column" fxLayoutAlign="center center">
+                                    <div class="red-fg font-size-72 line-height-72">
+                                        {{todayDeaths}}
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="fuse-widget-back p-16 pt-32">
+                                <button mat-icon-button fuseWidgetToggle class="fuse-widget-flip-button"
+                                    aria-label="Flip widget">
+                                    <mat-icon class="s-16">close</mat-icon>
+                                </button>
+
+                                <div>
+                                    Fuente : https://corona.lmao.ninja/countries/HONDURAS
+                                </div>
+                            </div>
+
+                        </fuse-widget>
+                        <!-- / Muertes de Hoy -->
+
+                        <!-- Condicion Critica -->
+                        <fuse-widget [@animate]="{value:'*',params:{y:'100%'}}" class="widget" fxLayout="column"
+                            fxFlex="100" fxFlex.gt-xs="50" fxFlex.gt-md="25">
+
+                            <div class="fuse-widget-front">
+                                <div class="pl-16 pr-8 py-16 h-52" fxLayout="row" fxLayoutAlign="space-between center">
+                                    En Estado Critico
+                                    <button mat-icon-button fuseWidgetToggle aria-label="more">
+                                        <mat-icon>more_vert</mat-icon>
+                                    </button>
+                                </div>
+
+                                <div class="pt-8 pb-32" fxLayout="column" fxLayoutAlign="center center">
+                                    <div class="yellow-fg font-size-72 line-height-72">
+                                        {{criticalCases}}
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="fuse-widget-back p-16 pt-32">
+                                <button mat-icon-button fuseWidgetToggle class="fuse-widget-flip-button"
+                                    aria-label="Flip widget">
+                                    <mat-icon class="s-16">close</mat-icon>
+                                </button>
+
+                                <div>
+                                    Fuente : https://corona.lmao.ninja/countries/HONDURAS
+                                </div>
+                            </div>
+
+                        </fuse-widget>
+                        <!-- / Condicion Critica -->
+
+                    </div>
+
+                </mat-tab>
+
+            </mat-tab-group>
+
+        </div>
+        <!-- / CONTENT -->
+
+    </div>
+    <!-- / CENTER -->
+
+
+</div>

@@ -1,0 +1,163 @@
+<!-- <div class="page-layout carded fullwidth inner-scroll"> -->
+<div class="page-layout carded fullwidth">
+
+    <!-- TOP BACKGROUND -->
+    <div class="top-bg accent"></div>
+    <!-- / TOP BACKGROUND -->
+
+    <!-- CENTER -->
+    <div class="center">
+
+        <!-- HEADER -->
+        <div class="header accent" fxLayout="row" fxLayoutAlign="space-between center">
+
+            <!-- APP TITLE -->
+            <div fxLayout="row" fxLayoutAlign="start center">
+
+                <!-- <button mat-icon-button class="mr-0 mr-sm-16">
+                    <mat-icon>arrow_back</mat-icon>
+                </button> -->
+
+                <div fxLayout="column" fxLayoutAlign="start start">
+                    <div class="h2">
+                        New Stat
+                    </div>
+                    <div class="subtitle secondary-text">
+                        <span>Stat Detail</span>
+                    </div>
+                </div>
+
+            </div>
+            <!-- / APP TITLE -->
+
+
+            <div style="margin-right: 8px;">
+                <button mat-raised-button (click)="onGetData()" class="add-product-button fuse-white mt-24 mt-md-0"
+                    style="left: -26px !important;">
+                    <span>Get Data</span>
+                </button>
+
+                <button mat-raised-button color="primary" aria-label="ADD" (click)="onSaveStat()">ADD</button>
+            </div>
+
+            <!-- <div class="actions" fxLayout="row" fxLayoutAlign="end center">
+                <button mat-raised-button color="primary" aria-label="ADD" (click)="onSaveStat()">ADD</button>
+            </div> -->
+
+        </div>
+        <!-- / HEADER -->
+
+        <!-- CONTENT CARD -->
+        <div class="content-card">
+
+            <!-- CONTENT TOOLBAR -->
+            <div class="toolbar px-24 py-8">
+                <span>Stat Information</span>
+            </div>
+            <!-- / CONTENT TOOLBAR -->
+
+            <!-- CONTENT -->
+            <!-- <div class="content p-24" fusePerfectScrollbar> -->
+            <div class="content p-24">
+
+
+
+
+                <div fxLayout="row" fxLayoutAlign="space-between">
+                    <mat-label>Cases: {{stat.cases}}</mat-label>
+                </div>
+                <div fxLayout="row">
+                    <mat-label>Today Cases: {{stat.todayCases}}</mat-label>
+                </div>
+                <div fxLayout="row">
+                    <mat-label>Deaths: {{stat.deaths}}</mat-label>
+                </div>
+                <div fxLayout="row">
+                    <mat-label>Today Deaths: {{stat.todayDeaths}}</mat-label>
+                </div>
+                <div fxLayout="row">
+                    <mat-label>Recovered: {{stat.recovered}}</mat-label>
+                </div>
+                <div fxLayout="row">
+                    <mat-label>Active: {{stat.active}}</mat-label>
+                </div>
+                <div fxLayout="row">
+                    <mat-label>Critical: {{stat.critical}}</mat-label>
+                </div>
+                <div fxLayout="row">
+                    <mat-label>Date: {{stat.date | date:'fullDate'}}</mat-label>
+                </div>
+
+
+
+                <!-- <form *ngIf="stat" name="statForm" [formGroup]="statForm" class="product w-100-p" fxLayout="column"
+                    fxFlex>
+
+                    <div fxLayout="row" fxLayoutAlign="space-between">
+                        <mat-form-field appearance="outline" floatLabel="always" fxFlex="48">
+                            <mat-label>Cases</mat-label>
+                            <input matInput placeholder="Cases..." name="cases" formControlName="cases" required>
+                        </mat-form-field>
+
+                        <mat-form-field appearance="outline" floatLabel="always" class="w-100-p"
+                            style="margin-left: 3%;">
+                            <mat-label>Today Cases</mat-label>
+                            <input matInput placeholder="Today Cases..." name="todayCases" formControlName="todayCases"
+                                required>
+                        </mat-form-field>
+                    </div>
+
+                    <div fxLayout="row" fxLayoutAlign="space-between">
+                        <mat-form-field appearance="outline" floatLabel="always" fxFlex="50">
+                            <mat-label>Deaths</mat-label>
+                            <input matInput placeholder="Deaths..." name="deaths" formControlName="deaths" required>
+                        </mat-form-field>
+
+                        <mat-form-field appearance="outline" floatLabel="always" fxFlex="50" style="margin-left: 3%;">
+                            <mat-label>Today Deaths</mat-label>
+                            <input matInput placeholder="Today Deaths..." name="todayDeaths"
+                                formControlName="todayDeaths" required>
+                        </mat-form-field>
+                    </div>
+
+                    <div fxLayout="row" fxLayoutAlign="space-between">
+                        <mat-form-field appearance="outline" floatLabel="always" fxFlex>
+                            <mat-label>Recovered</mat-label>
+                            <input matInput placeholder="Recovered..." name="recovered" formControlName="recovered"
+                                required>
+                        </mat-form-field>
+
+                        <mat-form-field fxFlex style="margin-left: 3%;">
+                            <mat-label>Active</mat-label>
+                            <input matInput placeholder="Active..." name="active" formControlName="active" required>
+                        </mat-form-field>
+                    </div>
+
+                    <div fxLayout="row" fxLayoutAlign="space-between">
+                        <mat-form-field appearance="outline" floatLabel="always" class="w-100-p">
+                            <mat-label>Critical</mat-label>
+                            <input matInput placeholder="Critical..." name="critical" formControlName="critical"
+                                required>
+                        </mat-form-field>
+
+                        <mat-form-field appearance="outline" floatLabel="always" class="w-100-p"
+                            style="margin-left: 3%;">
+                            <input matInput [matDatepicker]="picker" placeholder="Choose a date" name="date"
+                                formControlName="date" required disabled>
+                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                            <mat-datepicker #picker disabled="false"></mat-datepicker>
+                        </mat-form-field>
+                    </div>
+
+                </form> -->
+
+            </div>
+            <!-- / CONTENT -->
+
+        </div>
+        <!-- / CONTENT CARD -->
+
+    </div>
+    <!-- / CENTER -->
+
+</div>
