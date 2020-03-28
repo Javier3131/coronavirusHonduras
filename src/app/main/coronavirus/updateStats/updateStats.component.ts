@@ -3,6 +3,7 @@ import { fuseAnimations } from '@fuse/animations';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Stats } from '../stats.model';
 import { CoronaVirusService } from '../coronavirus.service';
+import Swal from 'sweetalert2';
 
 
 @Component({
@@ -32,15 +33,18 @@ export class UpdateStatsComponent implements OnInit {
     onSaveStat(): void {
         
         this.coronaService.saveStat(this.stat);
+        Swal.fire('Agregado Exitosamente', '', 'success');
     }
 
     onGetData(): void {
         this.coronaService.getData()
             .then(data => {
-
-                this.stat = new Stats(data);
+                // console.log(data);
+                this.stat = new Stats(data.body);
 
                 // console.log(this.stat);
+                
+
             })
             .catch(error => {
                 console.log(error);

@@ -12,27 +12,8 @@
                     [@animate]="{value:'*',params:{x:'50px'}}">Coronavirus en Honduras
                 </span>
 
-                <!-- <button mat-icon-button class="sidebar-toggle mr-8" fxHide.gt-md
-                        (click)="toggleSidebar('project-dashboard-right-sidebar-1')">
-                    <mat-icon>menu</mat-icon>
-                </button> -->
             </div>
 
-            <!-- <div fxLayout="row">
-
-                <div class="selected-project">{{selectedProject.name}}</div>
-
-                <button mat-icon-button class="project-selector" [matMenuTriggerFor]="projectsMenu"
-                        aria-label="Select project">
-                    <mat-icon>more_horiz</mat-icon>
-                </button>
-
-                <mat-menu #projectsMenu="matMenu">
-                    <button mat-menu-item *ngFor="let project of projects" (click)="selectedProject = project">
-                        <span>{{project.name}}</span>
-                    </button>
-                </mat-menu>
-            </div> -->
         </div>
         <!-- / HEADER -->
 
@@ -278,6 +259,25 @@
                         <!-- / Condicion Critica -->
 
                     </div>
+
+                </mat-tab>
+
+                <mat-tab label="Histórico">
+
+                    <div class="fuse-card auto-width auto-height">
+
+                        <div class="position-relative h-368 pb-16">
+
+                            <canvas baseChart [datasets]="lineChartData" [labels]="lineChartLabels"
+                                [options]="lineChartOptions" [colors]="lineChartColors" [legend]="lineChartLegend"
+                                [chartType]="lineChartType" (chartHover)="chartHovered($event)"
+                                (chartClick)="chartClicked($event)"></canvas>
+
+                        </div>
+
+                    </div>
+
+
 
                 </mat-tab>
 

@@ -1,3 +1,5 @@
+@import "src/@fuse/scss/fuse";
+
 #dashboard-project {
 
     > .sidebar {
@@ -48,6 +50,44 @@
             .mat-tab-label-container {
                 padding: 0 24px;
             }
+
+            .left {
+                display: flex;
+                flex-direction: column;
+                flex: 1 1 auto;
+                min-width: 0;
+    
+                .widget {
+                    flex: 1 1 auto;
+                    min-width: 0;
+                }
+            }
+    
+            .right {
+                display: flex;
+                flex: 0 0 auto;
+                width: 320px;
+                min-width: 320px;
+                max-width: 320px;
+    
+                @include media-breakpoint('lt-lg') {
+                    flex: 1 0 100%;
+                    margin-top: 32px;
+                    width: 100%;
+                    min-width: 0;
+                    max-width: none;
+                }
+    
+                .fuse-card {
+    
+                    @include media-breakpoint('lt-lg') {
+                        width: 100%;
+                        min-width: 0;
+                        max-width: none;
+                    }
+                }
+            }
+
         }
     }
 
@@ -60,4 +100,6 @@
             }
         }
     }
+
+    
 }

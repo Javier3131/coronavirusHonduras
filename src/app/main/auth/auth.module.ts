@@ -9,19 +9,19 @@ import { FuseSharedModule } from '@fuse/shared.module';
 
 import { LoginComponent } from "./login/login.component";
 import { AuthGuard } from './auth.guard';
-import { CoronavirusModule } from '../coronavirus/coronavirus.module';
-import { CoronavirusComponent } from '../coronavirus/coronavirus.component';
+// import { CoronavirusModule } from '../coronavirus/coronavirus.module';
+// import { CoronavirusComponent } from '../coronavirus/coronavirus.component';
 
 
 const routes = [
     {
         path: 'login',
         component: LoginComponent
-    },
-    {
-        path: '**',
-        component: CoronavirusComponent
     }
+    // {
+    //     path: '**',
+    //     component: CoronavirusComponent
+    // }
 ];
 
 @NgModule({
@@ -38,9 +38,9 @@ const routes = [
         MatInputModule,
         MatSelectModule,
 
-        FuseSharedModule,
+        FuseSharedModule
 
-        CoronavirusModule
+        // CoronavirusModule
     ],
     exports: [
         LoginComponent

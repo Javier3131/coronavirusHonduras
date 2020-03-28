@@ -23,6 +23,7 @@ import { registerLocaleData } from '@angular/common';
 import localeEs from '@angular/common/locales/es';
 import { AuthGuard } from '../auth/auth.guard';
 
+
 registerLocaleData(localeEs);
 
 const routes: Routes = [
@@ -34,11 +35,11 @@ const routes: Routes = [
     {
         path: 'dashboard',
         component: CoronavirusComponent
-    },
-    {
-        path: '**',
-        component: CoronavirusComponent
     }
+    // {
+    //     path: '**',
+    //     component: CoronavirusComponent
+    // }
 ];
 
 @NgModule({
@@ -65,6 +66,7 @@ const routes: Routes = [
         MatInputModule,
 
         NgxChartsModule,
+        ChartsModule,
 
         FuseSharedModule,
         FuseSidebarModule,
