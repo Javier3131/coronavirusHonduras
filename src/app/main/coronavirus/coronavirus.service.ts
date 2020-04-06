@@ -16,6 +16,10 @@ export class CoronaVirusService {
         return this.http.get<any>(this.url, { observe: 'response' }).toPromise();
     }
 
+    getGlobalData() {
+        return this.http.get<any>('https://corona.lmao.ninja/all', { observe: 'response' }).toPromise();
+    }
+
     saveStat(stat: Stats) {
         const endPoint: string = 'stats.json';
         this.http.post(

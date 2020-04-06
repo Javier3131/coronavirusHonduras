@@ -20,7 +20,8 @@ import { CoronavirusComponent } from './coronavirus.component';
 import { UpdateStatsComponent } from './updateStats/updateStats.component';
 
 import { registerLocaleData } from '@angular/common';
-import localeEs from '@angular/common/locales/es';
+// import localeEs from '@angular/common/locales/es';
+import localeEs from '@angular/common/locales/es-HN';
 import { AuthGuard } from '../auth/auth.guard';
 
 
@@ -36,17 +37,13 @@ const routes: Routes = [
         path: 'dashboard',
         component: CoronavirusComponent
     }
-    // {
-    //     path: '**',
-    //     component: CoronavirusComponent
-    // }
 ];
 
 @NgModule({
     declarations: [
         UpdateStatsComponent,
         CoronavirusComponent
-        
+
     ],
     imports: [
         RouterModule.forChild(routes),
@@ -76,12 +73,11 @@ const routes: Routes = [
     exports: [
         UpdateStatsComponent,
         CoronavirusComponent
-        
-    ],
-    providers: [{ provide: LOCALE_ID, useValue: 'es' }],
-    // providers: [
 
-    // ],
+    ],
+    providers: [
+        { provide: LOCALE_ID, useValue: 'es-HN' }
+    ],
 })
 export class CoronavirusModule {
 }

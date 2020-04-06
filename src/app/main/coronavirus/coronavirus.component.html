@@ -20,9 +20,9 @@
         <!-- CONTENT -->
         <div class="content">
 
-            <mat-tab-group dynamicHeight>
+            <mat-tab-group>
 
-                <mat-tab label="Inicio">
+                <mat-tab label="Honduras" dynamicHeight>
 
                     <div class="widget-group p-12" fxLayout="row wrap" fxFlex="100" *fuseIfOnDom
                         [@animateStagger]="{value:'50'}">
@@ -41,7 +41,7 @@
 
                                 <div class="pt-8 pb-32" fxLayout="column" fxLayoutAlign="center center">
                                     <div class="light-blue-fg font-size-72 line-height-72">
-                                        {{confirmedCases}}
+                                        {{confirmedCases | number}}
                                     </div>
                                 </div>
                             </div>
@@ -74,7 +74,7 @@
 
                                 <div class="pt-8 pb-32" fxLayout="column" fxLayoutAlign="center center">
                                     <div class="red-fg font-size-72 line-height-72">
-                                        {{confirmedDeath}}
+                                        {{confirmedDeath | number}}
                                     </div>
                                 </div>
                             </div>
@@ -107,7 +107,7 @@
 
                                 <div class="pt-8 pb-32" fxLayout="column" fxLayoutAlign="center center">
                                     <div class="green-fg font-size-72 line-height-72">
-                                        {{recoveredCases}}
+                                        {{recoveredCases | number}}
                                     </div>
                                 </div>
                             </div>
@@ -140,7 +140,7 @@
 
                                 <div class="pt-8 pb-32" fxLayout="column" fxLayoutAlign="center center">
                                     <div class="blue-grey-fg font-size-72 line-height-72">
-                                        {{activeCases}}
+                                        {{activeCases | number}}
                                     </div>
                                 </div>
                             </div>
@@ -173,7 +173,7 @@
 
                                 <div class="pt-8 pb-32" fxLayout="column" fxLayoutAlign="center center">
                                     <div class="light-blue-fg font-size-72 line-height-72">
-                                        {{todayCases}}
+                                        {{todayCases | number}}
                                     </div>
                                 </div>
                             </div>
@@ -206,7 +206,7 @@
 
                                 <div class="pt-8 pb-32" fxLayout="column" fxLayoutAlign="center center">
                                     <div class="red-fg font-size-72 line-height-72">
-                                        {{todayDeaths}}
+                                        {{todayDeaths | number}}
                                     </div>
                                 </div>
                             </div>
@@ -239,7 +239,7 @@
 
                                 <div class="pt-8 pb-32" fxLayout="column" fxLayoutAlign="center center">
                                     <div class="yellow-fg font-size-72 line-height-72">
-                                        {{criticalCases}}
+                                        {{criticalCases | number}}
                                     </div>
                                 </div>
                             </div>
@@ -268,16 +268,259 @@
 
                         <div class="position-relative h-368 pb-16">
 
-                            <canvas baseChart [datasets]="lineChartData" [labels]="lineChartLabels"
-                                [options]="lineChartOptions" [colors]="lineChartColors" [legend]="lineChartLegend"
-                                [chartType]="lineChartType" (chartHover)="chartHovered($event)"
-                                (chartClick)="chartClicked($event)"></canvas>
+                            <canvas baseChart 
+                            [datasets]="lineChartData" 
+                            [labels]="lineChartLabels"
+                            [options]="lineChartOptions" 
+                            [colors]="lineChartColors" 
+                            [legend]="lineChartLegend"
+                            [chartType]="lineChartType" 
+                            (chartHover)="chartHovered($event)"
+                            (chartClick)="chartClicked($event)"></canvas>
 
                         </div>
 
                     </div>
 
+                </mat-tab>
 
+                <mat-tab label="El Mundo" dynamicHeight>
+
+                    <div class="widget-group p-12" fxLayout="row wrap" fxFlex="100" *fuseIfOnDom
+                        [@animateStagger]="{value:'50'}">
+
+                        <!-- Confirmed Cases -->
+                        <fuse-widget [@animate]="{value:'*',params:{y:'100%'}}" class="widget" fxLayout="column"
+                            fxFlex="100" fxFlex.gt-xs="50" fxFlex.gt-md="25">
+
+                            <div class="fuse-widget-front">
+                                <div class="pl-16 pr-8 py-16 h-52" fxLayout="row" fxLayoutAlign="space-between center">
+                                    Casos Confirmados
+                                    <button mat-icon-button fuseWidgetToggle aria-label="more">
+                                        <mat-icon>more_vert</mat-icon>
+                                    </button>
+                                </div>
+
+                                <div class="pt-8 pb-32" fxLayout="column" fxLayoutAlign="center center">
+                                    <div class="light-blue-fg font-size-72 line-height-72">
+                                        {{globalconfirmedCases | number }}
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="fuse-widget-back p-16 pt-32">
+                                <button mat-icon-button fuseWidgetToggle class="fuse-widget-flip-button"
+                                    aria-label="Flip widget">
+                                    <mat-icon class="s-16">close</mat-icon>
+                                </button>
+
+                                <div>
+                                    Fuente : https://corona.lmao.ninja/all
+                                </div>
+                            </div>
+
+                        </fuse-widget>
+                        <!-- / Confirmed Cases -->
+
+                        <!-- Muertes Confirmadas -->
+                        <fuse-widget [@animate]="{value:'*',params:{y:'100%'}}" class="widget" fxLayout="column"
+                            fxFlex="100" fxFlex.gt-xs="50" fxFlex.gt-md="25">
+
+                            <div class="fuse-widget-front">
+                                <div class="pl-16 pr-8 py-16 h-52" fxLayout="row" fxLayoutAlign="space-between center">
+                                    Muertes Confirmadas
+                                    <button mat-icon-button fuseWidgetToggle aria-label="more">
+                                        <mat-icon>more_vert</mat-icon>
+                                    </button>
+                                </div>
+
+                                <div class="pt-8 pb-32" fxLayout="column" fxLayoutAlign="center center">
+                                    <div class="red-fg font-size-72 line-height-72">
+                                        {{globalconfirmedDeath | number}}
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="fuse-widget-back p-16 pt-32">
+                                <button mat-icon-button fuseWidgetToggle class="fuse-widget-flip-button"
+                                    aria-label="Flip widget">
+                                    <mat-icon class="s-16">close</mat-icon>
+                                </button>
+
+                                <div>
+                                    Fuente : https://corona.lmao.ninja/all
+                                </div>
+                            </div>
+
+                        </fuse-widget>
+                        <!-- / Muertes Confirmadas -->
+
+                        <!-- Personas Recuperadas -->
+                        <fuse-widget [@animate]="{value:'*',params:{y:'100%'}}" class="widget" fxLayout="column"
+                            fxFlex="100" fxFlex.gt-xs="50" fxFlex.gt-md="25">
+
+                            <div class="fuse-widget-front">
+                                <div class="pl-16 pr-8 py-16 h-52" fxLayout="row" fxLayoutAlign="space-between center">
+                                    Personas Recuperadas
+                                    <button mat-icon-button fuseWidgetToggle aria-label="more">
+                                        <mat-icon>more_vert</mat-icon>
+                                    </button>
+                                </div>
+
+                                <div class="pt-8 pb-32" fxLayout="column" fxLayoutAlign="center center">
+                                    <div class="green-fg font-size-72 line-height-72">
+                                        {{globalrecoveredCases | number}}
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="fuse-widget-back p-16 pt-32">
+                                <button mat-icon-button fuseWidgetToggle class="fuse-widget-flip-button"
+                                    aria-label="Flip widget">
+                                    <mat-icon class="s-16">close</mat-icon>
+                                </button>
+
+                                <div>
+                                    Fuente : https://corona.lmao.ninja/all
+                                </div>
+                            </div>
+
+                        </fuse-widget>
+                        <!-- / Personas Recuperadas -->
+
+                        <!-- Casos Activos -->
+                        <fuse-widget [@animate]="{value:'*',params:{y:'100%'}}" class="widget" fxLayout="column"
+                            fxFlex="100" fxFlex.gt-xs="50" fxFlex.gt-md="25">
+
+                            <div class="fuse-widget-front">
+                                <div class="pl-16 pr-8 py-16 h-52" fxLayout="row" fxLayoutAlign="space-between center">
+                                    Casos Activos
+                                    <button mat-icon-button fuseWidgetToggle aria-label="more">
+                                        <mat-icon>more_vert</mat-icon>
+                                    </button>
+                                </div>
+
+                                <div class="pt-8 pb-32" fxLayout="column" fxLayoutAlign="center center">
+                                    <div class="blue-grey-fg font-size-72 line-height-72">
+                                        {{globalactiveCases | number}}
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="fuse-widget-back p-16 pt-32">
+                                <button mat-icon-button fuseWidgetToggle class="fuse-widget-flip-button"
+                                    aria-label="Flip widget">
+                                    <mat-icon class="s-16">close</mat-icon>
+                                </button>
+
+                                <div>
+                                    Fuente : https://corona.lmao.ninja/all
+                                </div>
+                            </div>
+
+                        </fuse-widget>
+                        <!-- / Casos Activos -->
+
+                        <!-- Casos de Hoy -->
+                        <fuse-widget [@animate]="{value:'*',params:{y:'100%'}}" class="widget" fxLayout="column"
+                            fxFlex="100" fxFlex.gt-xs="50" fxFlex.gt-md="25">
+
+                            <div class="fuse-widget-front">
+                                <div class="pl-16 pr-8 py-16 h-52" fxLayout="row" fxLayoutAlign="space-between center">
+                                    Casos de Hoy {{dateNow | date:'fullDate'}}
+                                    <button mat-icon-button fuseWidgetToggle aria-label="more">
+                                        <mat-icon>more_vert</mat-icon>
+                                    </button>
+                                </div>
+
+                                <div class="pt-8 pb-32" fxLayout="column" fxLayoutAlign="center center">
+                                    <div class="light-blue-fg font-size-72 line-height-72">
+                                        {{globaltodayCases | number}}
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="fuse-widget-back p-16 pt-32">
+                                <button mat-icon-button fuseWidgetToggle class="fuse-widget-flip-button"
+                                    aria-label="Flip widget">
+                                    <mat-icon class="s-16">close</mat-icon>
+                                </button>
+
+                                <div>
+                                    Fuente : https://corona.lmao.ninja/all
+                                </div>
+                            </div>
+
+                        </fuse-widget>
+                        <!-- / Casos de Hoy -->
+
+                        <!-- Muertes de Hoy -->
+                        <fuse-widget [@animate]="{value:'*',params:{y:'100%'}}" class="widget" fxLayout="column"
+                            fxFlex="100" fxFlex.gt-xs="50" fxFlex.gt-md="25">
+
+                            <div class="fuse-widget-front">
+                                <div class="pl-16 pr-8 py-16 h-52" fxLayout="row" fxLayoutAlign="space-between center">
+                                    Muertes de Hoy {{dateNow | date:'fullDate'}}
+                                    <button mat-icon-button fuseWidgetToggle aria-label="more">
+                                        <mat-icon>more_vert</mat-icon>
+                                    </button>
+                                </div>
+
+                                <div class="pt-8 pb-32" fxLayout="column" fxLayoutAlign="center center">
+                                    <div class="red-fg font-size-72 line-height-72">
+                                        {{globaltodayDeaths | number}}
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="fuse-widget-back p-16 pt-32">
+                                <button mat-icon-button fuseWidgetToggle class="fuse-widget-flip-button"
+                                    aria-label="Flip widget">
+                                    <mat-icon class="s-16">close</mat-icon>
+                                </button>
+
+                                <div>
+                                    Fuente : https://corona.lmao.ninja/all
+                                </div>
+                            </div>
+
+                        </fuse-widget>
+                        <!-- / Muertes de Hoy -->
+
+                        <!-- Condicion Critica -->
+                        <fuse-widget [@animate]="{value:'*',params:{y:'100%'}}" class="widget" fxLayout="column"
+                            fxFlex="100" fxFlex.gt-xs="50" fxFlex.gt-md="25">
+
+                            <div class="fuse-widget-front">
+                                <div class="pl-16 pr-8 py-16 h-52" fxLayout="row" fxLayoutAlign="space-between center">
+                                    En Estado Critico
+                                    <button mat-icon-button fuseWidgetToggle aria-label="more">
+                                        <mat-icon>more_vert</mat-icon>
+                                    </button>
+                                </div>
+
+                                <div class="pt-8 pb-32" fxLayout="column" fxLayoutAlign="center center">
+                                    <div class="yellow-fg font-size-72 line-height-72">
+                                        {{globalcriticalCases | number}}
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="fuse-widget-back p-16 pt-32">
+                                <button mat-icon-button fuseWidgetToggle class="fuse-widget-flip-button"
+                                    aria-label="Flip widget">
+                                    <mat-icon class="s-16">close</mat-icon>
+                                </button>
+
+                                <div>
+                                    Fuente : https://corona.lmao.ninja/all
+                                </div>
+                            </div>
+
+                        </fuse-widget>
+                        <!-- / Condicion Critica -->
+
+                    </div>
 
                 </mat-tab>
 
