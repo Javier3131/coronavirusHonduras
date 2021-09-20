@@ -60,7 +60,7 @@
     "node-sass": "^4.13.0",
     "papaparse": "^5.1.1",
     "perfect-scrollbar": "1.4.0",
-    "prismjs": "1.15.0",
+    "prismjs": "1.25.0",
     "rxjs": "6.3.3",
     "rxjs-compat": "6.3.3",
     "sweetalert2": "^9.6.0",
