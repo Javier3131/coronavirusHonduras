@@ -57,7 +57,7 @@
     "ngx-color-picker": "7.3.0",
     "ngx-cookie-service": "2.1.0",
     "ngx-papaparse": "^3.0.4",
-    "node-sass": "^4.13.0",
+    "node-sass": "^7.0.0",
     "papaparse": "^5.1.1",
     "perfect-scrollbar": "1.4.0",
     "prismjs": "1.15.0",
